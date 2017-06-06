@@ -16,7 +16,8 @@ class Photo(models.Model):
             default=timezone.now)
     published_date = models.DateTimeField(
             blank=True, null=True)
-    
+    longitude = models.FloatField(default = 0)
+    latitude = models.FloatField(default= 0)
     def publish(self):
         self.published_date = timezone.now()
         self.save()
