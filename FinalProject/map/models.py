@@ -1,5 +1,5 @@
 from __future__ import unicode_literals
-
+from djgeojson.fields import PointField
 from django.db import models
 from django.utils import timezone
 from django.utils.encoding import python_2_unicode_compatible
@@ -24,6 +24,13 @@ class Photo(models.Model):
     def __str__(self):
         return self.title
 
+    geom = PointField()
+    description = models.TextField()
+    picture = models.ImageField()
+
+    @property
+    def popupContent(self):
+      return '<img src="C:\Users\HsiaoWenHui\Documents\GitHub\NTUST_FinalProject\FinalProject\map\ templates\map\NTUST.jpg" /><p><NTUST</p>'
     class Meta:
         ordering = ["-timestamp"]
 

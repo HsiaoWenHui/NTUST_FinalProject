@@ -38,8 +38,12 @@
 			'Imagery © <a href="http://mapbox.com">Mapbox</a>',
 		id: 'mapbox.streets'
 		}).addTo(mymap);
+		
+    		
+      	L.marker([la, lo]).addTo(mymap).bindPopup("Here").openPopup();
+    		
+  	
 
-		L.marker([la, lo]).addTo(mymap).bindPopup("<b>Your current location!</b><br />I am a popup.").openPopup();
 
 
 		var popup = L.popup();
