@@ -10,3 +10,9 @@ def photo_list(request):
 		"photos": queryset,
 	}
 	return render(request, "map/photo.html", context)
+
+def record(request):
+	return  render(request, "map/record.html", context)
+
+def diary(request):
+        return  render(request, "map/diary.html", context)
