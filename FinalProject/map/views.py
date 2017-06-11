@@ -12,7 +12,7 @@ def photo_list(request):
 	return render(request, "map/photo.html", context)
 
 def record(request):
-	return  render(request, "map/record.html", context)
+	return  render(request, "map/record.html")
 
 def diary(request):
-        return  render(request, "map/diary.html", context)
+        return  render(request, "map/diary.html")
