@@ -1,4 +1,4 @@
-# -*- coding: utf-8 -*-
+
 {% load static %}
 <!DOCTYPE html>
 <!-- saved from url=(0039)http://getbootstrap.com/examples/cover/ -->
@@ -63,7 +63,7 @@
 						var mymap;
 						
 						
-						{% for map in maps %}  #改這 map是model裡設的 maps是py迴圈的東西#
+						{% for map in maps %}
 						mymap = L.map('mapid').setView([{{map.longitude}},{{map.latitude}} ], 13);
 						{% endfor %}
 						L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token=pk.eyJ1IjoibWFwYm94IiwiYSI6ImNpejY4NXVycTA2emYycXBndHRqcmZ3N3gifQ.rJcFIG214AriISLbB6B5aw', {
@@ -74,11 +74,9 @@
 								id: 'mapbox.streets'
 						}).addTo(mymap);
 							
-					
-						{% for map in maps %}
+					        {% for map in maps %}
 						L.marker([{{map.longitude}},{{map.latitude}}]).addTo(mymap).bindPopup("Here").openPopup();
-						{% endfor %} #到這# 
-						
+						{% endfor %}
 							
 							
 						var popup = L.popup();
