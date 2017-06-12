@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-  #要用中文註解，記得加"#"#
 from __future__ import unicode_literals
 from django.db import models
 from django.utils import timezone
