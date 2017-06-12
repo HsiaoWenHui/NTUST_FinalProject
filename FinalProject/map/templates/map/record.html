@@ -72,7 +72,7 @@
 								id: 'mapbox.streets'
 						}).addTo(mymap);
 							
-					    {% for map in maps %}
+					        {% for map in maps %}
 						L.marker([{{map.longitude}},{{map.latitude}}]).addTo(mymap).bindPopup("Here").openPopup();
 						{% endfor %}
 						
