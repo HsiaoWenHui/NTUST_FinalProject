@@ -1,4 +1,4 @@
-# -*- coding: utf-8 -*-  #要用中文註解，記得加"#"#
+# -*- coding: utf-8 -*-
 from __future__ import unicode_literals
 from django.db import models
 from django.utils import timezone
@@ -33,7 +33,3 @@ class Map(models.Model):         #經緯度#
 
     def __str__(self):
         return self.title
-   
-
-
-
