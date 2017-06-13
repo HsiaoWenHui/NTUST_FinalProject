@@ -75,7 +75,6 @@
 						
 
 					    {% for map in maps %}
-					    //var total={{map.title}}
 					  	document.getElementById("urlTest").innerHTML = "{{map.title}}";
 						L.marker([{{map.longitude}},{{map.latitude}}]).addTo(mymap).bindPopup(urlTest).openPopup();
 						{% endfor %}

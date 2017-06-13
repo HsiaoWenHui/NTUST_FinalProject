@@ -26,7 +26,10 @@ class Map(models.Model):         #經緯度#
     title = models.CharField(max_length=200)
     longitude = models.FloatField(default = 0)
     latitude = models.FloatField(default= 0)
-    
+    width = models.IntegerField(default=0)
+    height = models.IntegerField(default=0)
+    image = models.ImageField(null=False, blank=False, width_field="width", height_field="height")
+
     def __str__(self):
         return self.title
    
