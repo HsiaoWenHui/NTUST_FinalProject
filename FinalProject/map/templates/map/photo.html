@@ -93,15 +93,15 @@
 					<a class="btn btn-primary btn-xl slide-in-fwd-center" href="{% url 'map:record' %}">record</a>
 					<a class="btn btn-primary btn-xl slide-in-fwd-center" href="{% url 'map:diary' %}">diary</a>
 					<p class="lead">
-						{% for photo in photos %}
-						{% if photo.image %}
-						<h1>{{ photo.title }}</h1>
-						<img src='{{ photo.image.url }}' class="img-responsive" />
-					        <p>published: {{ photo.published_date }}</p>
-					        <P>{{photo.longitude}}<p>
-                            <P>{{photo.latitude}}<p>  
-       					<h1><a href="https://udn.com/news/story/6656/2494473">{{ photo.title }}</a></h1>
-       					<p>{{ photo.text|linebreaksbr}}</p>
+						{% for a in photos %}
+						{% if a.image %}
+						<h1>{{ a.title }}</h1>
+						<img src='{{ a.image.url }}' class="img-responsive" />
+					        <p>published: {{ a.published_date }}</p>
+					        <P>{{a.longitude}}<p>
+                                                <P>{{a.latitude}}<p>  
+       					<h1><a href="https://udn.com/news/story/6656/2494473">{{ a.title }}</a></h1>
+       					<p>{{ a.text|linebreaksbr}}</p>
 						{% endif %}
 						{% endfor %}
 					</p>

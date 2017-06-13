@@ -33,3 +33,7 @@ class Map(models.Model):         #經緯度#
 
     def __str__(self):
         return self.title
+   
+
+
+
