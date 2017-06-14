@@ -77,17 +77,33 @@
 								id: 'mapbox.streets'
 						}).addTo(mymap);
 
+						function test(x){
+
+							var test1=document.getElementById("imageTest").src='{{x.image.url}}';
+							return test1;
+						}
 						//跑所有資料庫的資料	
 					    {% for a in maps %}
 					    //每筆的連結和圖片改掉
+					  		var pic=new Image();
+					  		pic.height=50;
+					  		pic.width=50;					  		
+					  		pic.src='{{a.image.url}}';;
 
-					  		//document.getElementById("urlTest").innerHTML = "{{a.title}}";
-					  		document.getElementById("imageTest").src = '{{a.image.url}}';
-					  		//tesst[count]=context;
-
+					  		var linkTest="{{a.title}}";
+					  		var result=linkTest.link("{% url 'map:diary' %}");
+					  		
+					  		
 					  	//再用context這個div放進地標框框中
-							L.marker([{{a.longitude}},{{a.latitude}}]).addTo(mymap).bindPopup(imageTest).openPopup();
-							count+=1;
+							L.marker([{{a.longitude}},{{a.latitude}}]).addTo(mymap).bindPopup(
+								"<a href="+"{% url 'map:diary' %}"+">"+"{{a.title}}"+"</a>"
+								+"<img src="+'{{ a.image.url }} ' +"width="+50+"height="+50+"/>"
+
+
+
+
+								).openPopup();
+							
 						{% endfor %}
 						
 					
