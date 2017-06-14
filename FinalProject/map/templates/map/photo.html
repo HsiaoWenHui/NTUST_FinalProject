@@ -347,11 +347,9 @@
                     </div>
                     <div class="row">
                         <h1>(Put the fuking leaflet here.)</h1>
-                        <div id="mapid" style="width: 600px; height: 480px;"></div>
+                        <div id="mapid" style="width:600px; height: 480px;"></div>
                          <script>
-                          var coord;
-                          var lat = 50;
-                          var long = 50;
+
                           var mymap;
                           navigator.geolocation.getCurrentPosition(showPosition);
                           navigator.geolocation.getCurrentPosition(function (position) {
@@ -367,9 +365,9 @@
                                 id: 'mapbox.streets'
                                 }).addTo(mymap);
                             
-                            for(i=0;i<5;i++){
-                                L.marker([la+i/100, lo+i/100]).addTo(mymap).bindPopup("Here").openPopup();
-                            }
+                            
+                                L.marker([la, lo]).addTo(mymap).bindPopup("Yor are Here!!").openPopup();
+                            
                             
                             
                             var popup = L.popup();
@@ -480,7 +478,9 @@
                     </div>
                     <div class="clearfix"></div>
                     <div class="row">
-                        <h1>(Message sending part)</h1>
+                        <h1><a class="btn btn-primary btn-xl slide-in-fwd-center" href="{% url 'map:diary' %}">diary</a>
+                            <a class="btn btn-primary btn-xl slide-in-fwd-center" href="{% url 'map:record' %}">record</a>
+                        </h1>
                     </div>
                 </div>
             </div>
