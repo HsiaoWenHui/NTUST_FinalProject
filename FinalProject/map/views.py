@@ -20,3 +20,9 @@ def record(request):
 
 def diary(request):
         return  render(request, "map/diary.html")
+def Diary_Page(request):
+	queryset = Map.objects.all()
+	context = {
+		"maps":queryset,
+	}
+	return  render(request, "map/Diary_Page.html",context)
