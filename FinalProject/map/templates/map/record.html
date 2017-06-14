@@ -98,6 +98,7 @@
 							L.marker([{{a.longitude}},{{a.latitude}}]).addTo(mymap).bindPopup(
 								"<a href="+"{% url 'map:diary' %}"+">"+"{{a.title}}"+"</a>"
 								+"<img src="+'{{ a.image.url }} ' +"width="+50+"height="+50+"/>"
+								+"{{a.text}}"
 
 
 
